@@ -4,6 +4,21 @@
   .content > * + * {
     margin-top: 0.25rlh;
   }
+
+  &:not(:has(img)) h3 {
+    font-size: 1.3rem;
+  }
+
+  &:not(:has(h3, img)) p {
+    font-size: 1.25rem;
+    line-height: 1.4;
+  }
+
+  &:has(img) img {
+    display: block;
+    width: calc(100% + 2rem);
+    margin: -1rem 1rem 1rem -1rem;
+  }
 }
 
 @layer reset, cards;
@@ -36,19 +51,6 @@
 
   p {
     color: #334155;
-  }
-
-  .card:not(:has(img)) h3 {
-    font-size: 1.3rem;
-  }
-  .card:not(:has(h3)):not(:has(img)) {
-    font-size: 1.25rem;
-    line-height: 1.4;
-  }
-  .card:has(img) img {
-    display: block;
-    width: calc(100% + 2rem); /* 2 × padding */
-    margin: -1rem 1rem 1rem -1rem;
   }
 }
 
