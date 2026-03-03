@@ -1,12 +1,84 @@
 :root {
-    --color-heading: #0B0D19;
-    --color-body: #677386;
-    --color-bg-button: #3D7BFA;
-    --color-text-button: #FFF;
+  --color-heading: #0b0d19;
+  --color-body: #677386;
+  --color-bg-button: #3d7bfa;
+  --color-text-button: #fff;
 
-    /* Når du synes, du er færdig, så ændr værdien herunder til '1' for at se dit resultat i browseren */
-    --hide-overlay: 0;
+  /* Når du synes, du er færdig, så ændr værdien herunder til '1' for at se dit resultat i browseren */
+  --hide-overlay: 1;
 }
 
-
 /* Begynd her... */
+body {
+  background-color: 677386;
+}
+
+.grid_1-1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 100px;
+  background-color: #fff;
+  border-radius: 30px;
+
+  & img {
+    border-radius: 15px;
+  }
+  & h1 {
+    color: #0b0d19;
+    font-size: 5rem;
+    margin-bottom: 10px;
+  }
+
+  & button {
+    background-color: #3d7bfa;
+    border-radius: 10px;
+    color: #fff;
+    margin-top: 10px;
+  }
+
+  .tekst {
+    padding: 100px;
+  }
+}
+
+.grid_1-1-1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  gap: 10px;
+  margin: 50px;
+}
+
+.img1 {
+  grid-column: 2/3;
+}
+
+.img2 {
+  grid-row: 2/3;
+  grid-column: 1/2;
+}
+
+.img3 {
+  grid-row: 2/4;
+  grid-column: 2/3;
+}
+
+.img6 {
+  grid-column: 3/4;
+  grid-row: 3/4;
+}
+
+.img5 {
+  grid-row: 3/4;
+  grid-column: 1/2;
+}
+
+.img4 {
+  grid-row: 2/3;
+  grid-column: 3/4;
+}
+
+.img7 {
+  grid-row: 4/5;
+  grid-column: 2/3;
+}
