@@ -1,16 +1,93 @@
 :root {
-    --gray-50: #f9fafb;
-    --gray-100: #f3f4f6;
-    --gray-200: #e5e7eb;
-    --gray-300: #d1d5db;
-    --gray-400: #9ca3af;
-    --gray-500: #6b7280;
-    --gray-600: #4b5563;
-    --gray-700: #374151;
-    --gray-800: #1f2937;
-    --gray-900: #111827;
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-400: #9ca3af;
+  --gray-500: #6b7280;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  --gray-900: #111827;
+}
+
+:root {
+  --step--1: 0.875rem;
+  --step-0: 1rem;
+  --step-1: 1.25rem;
+  --step-2: 1.563rem;
+  --step-3: 1.953rem;
 }
 
 body {
-    font-family: system-ui, sans-serif;
+  font-family: system-ui, sans-serif;
+}
+
+article {
+  max-inline-size: 65ch; /* læsevenlig bredde */
+  margin-inline: auto; /* centrerer elementet */
+
+  --flow-space: 0.5rlh; /* standard spacing */
+}
+
+article > * + * {
+  margin-top: var(--flow-space);
+}
+
+h1 {
+  color: var(--gray-900);
+  font-size: var(--step-3);
+}
+
+h2 {
+  color: var(--gray-800);
+  font-size: var(--step-2);
+}
+h3 {
+  color: var(--gray-700);
+  font-size: var(--step-1);
+}
+
+p {
+  color: var(--gray-600);
+  font-size: var(--step-0);
+}
+
+small,
+figcaption {
+  color: var(--gray-500);
+  font-size: var(--step--1);
+}
+
+p + h2 {
+  --flow-space: 2rlh;
+}
+figure + h2 {
+  --flow-space: 2rlh;
+}
+h2 + h3 {
+  --flow-space: 1rlh;
+}
+a {
+  color: var(--gray-900); /* mørk farve */
+  text-decoration: underline;
+  font-weight: 500;
+}
+code {
+  font-family: monospace;
+  background-color: var(--gray-100);
+  padding: 0.1em 0.3em;
+  border-radius: 4px;
+  font-size: 0.95em;
+}
+
+figure {
+  margin: var(--flow-space) 0;
+}
+
+figcaption {
+  font-size: var(--step--1);
+  color: var(--gray-500);
+  text-align: center;
+  margin-top: 0.25rem;
 }
