@@ -1,2 +1,23 @@
 /* Dine styles her */
-article {}
+
+article {
+  max-inline-size: 65ch;
+  margin-inline: auto;
+  --flow-space: 5rlh;
+
+  > * + * {
+    margin-top: var(--flow-space);
+  }
+}
+
+article h2 {
+  --flow-space: 2rlh;
+}
+
+article h3 {
+  --flow-space: 1rlh;
+}
+
+article h3 + * {
+  --flow-space: 0.25rlh;
+}
