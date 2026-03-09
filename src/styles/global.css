@@ -2,35 +2,74 @@
 
 @import "./reset.css" layer(reset);
 
-
 @layer exercise {
-    :root {
-        --content-width: 50rem;
-        --card-padding: 2.75rem 2.1875rem;
-        --card-gap: 1rem;
-        --card-border-radius: 8px;
-        --card-background: #EBEBEB;
-        --card-text-color: #595566;
+  :root {
+    --content-width: 50rem;
+    --card-padding: 2.75rem 2.1875rem;
+    --card-gap: 1rem;
+    --card-border-radius: 8px;
+    --card-background: #ebebeb;
+    --card-text-color: #595566;
+    --content-width: 1200px;
+  }
+
+  body {
+    min-height: 100svh;
+    font-family: system-ui, sans-serif;
+  }
+
+  h2,
+  h3 {
+    color: #181818;
+    margin-block: 0 0.625rem;
+    line-height: 1.125;
+  }
+
+  h2 {
+    font-size: 2.8125rem;
+  }
+
+  h3 {
+    font-weight: 700;
+    font-size: 1.5625rem;
+  }
+
+  main {
+    padding-block: 4rem;
+    display: grid;
+    grid-template-columns:
+      [full-start]
+      1fr
+      [content]
+      minmax(0, var(--content-width))
+      1fr
+      [full-end];
+    column-gap: 1rem;
+
+    > * {
+      grid-column: content;
     }
 
-    body {
-        min-height: 100svh;
-        font-family: system-ui, sans-serif;
-    }
+    .full {
+      grid-column: full;
+      display: grid;
+      grid-template-columns: inherit;
+      row-gap: 3rem;
 
-    h2,
-    h3 {
-        color: #181818;
-        margin-block: 0 0.625rem;
-        line-height: 1.125;
-    }
+      > * {
+        grid-column: content;
+      }
 
-    h2 {
-        font-size: 2.8125rem;
-    }
+      > ul {
+        scroll-snap-type: x mandatory;
+        grid-column: full;
+        padding-inline: max(1rem, 50% - var(--content-width) / 2);
+        padding-block-end: 1rem;
 
-    h3 {
-        font-weight: 700;
-        font-size: 1.5625rem;
+        li {
+          scroll-snap-align: center;
+        }
+      }
     }
+  }
 }
